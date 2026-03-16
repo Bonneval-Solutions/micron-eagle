@@ -22,11 +22,52 @@
           "single": "heading1"
         }
       },
+      "section": {
+        "type": "Select",
+        "config": {
+          "label": "Section",
+          "placeholder": "Choose section for nav grouping",
+          "options": ["home", "services", "spare-parts", "industries", "about", "insights", "contact"]
+        }
+      },
+      "intro": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Intro / short description",
+          "placeholder": "Optional for listing cards",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "main_pathways": {
+              "type": "SharedSlice"
+            },
+            "core_services": {
+              "type": "SharedSlice"
+            },
+            "industry_applications": {
+              "type": "SharedSlice"
+            },
+            "why_micron_eagle": {
+              "type": "SharedSlice"
+            },
+            "certifications_partners": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "cta_band": {
+              "type": "SharedSlice"
+            },
             "rich_text": {
               "type": "SharedSlice"
             }

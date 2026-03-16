@@ -3,5 +3,13 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  hero: dynamic(() => import("./Hero")),
+  main_pathways: dynamic(() => import("./MainPathways")),
+  core_services: dynamic(() => import("./CoreServices")),
+  industry_applications: dynamic(() => import("./IndustryApplications")),
+  why_micron_eagle: dynamic(() => import("./WhyMicronEagle")),
+  certifications_partners: dynamic(() => import("./CertificationsPartners")),
+  testimonials: dynamic(() => import("./Testimonials")),
+  cta_band: dynamic(() => import("./CtaBand")),
   rich_text: dynamic(() => import("./RichText")),
 };

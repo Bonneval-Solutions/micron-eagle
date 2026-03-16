@@ -1,0 +1,60 @@
+{
+  "id": "core_services",
+  "type": "SharedSlice",
+  "name": "CoreServices",
+  "description": "Grid of service cards",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "Repeatable service cards with link to Page",
+      "primary": {
+        "section_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section heading",
+            "placeholder": "Core services",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "On-Site Hydraulic Services"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link to page",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image (optional)",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

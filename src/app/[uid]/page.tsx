@@ -32,7 +32,7 @@ export async function generateMetadata({
     description: page.data.meta_description,
     openGraph: {
       title: page.data.meta_title ?? undefined,
-      images: [{ url: page.data.meta_image.url ?? "" }],
+      images: [{ url: page.data.meta_image?.url ?? "" }],
     },
   };
 }

@@ -1,0 +1,43 @@
+.ctaBand {
+  padding: 4rem 2rem;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 1.5rem;
+}
+
+.heading :global(h2) {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  color: #1a1a1a;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.cta:hover {
+  opacity: 0.9;
+}

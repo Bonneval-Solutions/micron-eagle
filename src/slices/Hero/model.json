@@ -1,0 +1,73 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Homepage hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "Hero with headline, CTAs and optional background",
+      "primary": {
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "subheadline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subheadline",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "primary_cta_label": {
+          "type": "Text",
+          "config": {
+            "label": "Primary CTA label",
+            "placeholder": "Request Parts"
+          }
+        },
+        "primary_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Primary CTA link",
+            "placeholder": ""
+          }
+        },
+        "secondary_cta_label": {
+          "type": "Text",
+          "config": {
+            "label": "Secondary CTA label",
+            "placeholder": "Speak to an Engineer"
+          }
+        },
+        "secondary_cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "Secondary CTA link",
+            "placeholder": ""
+          }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background image (optional)",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

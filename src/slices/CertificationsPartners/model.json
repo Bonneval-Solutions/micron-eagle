@@ -1,0 +1,51 @@
+{
+  "id": "certifications_partners",
+  "type": "SharedSlice",
+  "name": "CertificationsPartners",
+  "description": "Logos and short text",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "Repeatable logo/label items",
+      "primary": {
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline (optional)",
+            "placeholder": "Certifications & Partners",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        }
+      },
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Logo / image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link (optional)",
+            "placeholder": ""
+          }
+        },
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Label",
+            "placeholder": "ISO 9001"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

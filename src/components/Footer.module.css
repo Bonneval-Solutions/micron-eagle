@@ -1,0 +1,118 @@
+.footer {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  padding: 3rem 2rem 2rem;
+  margin-top: 4rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #333;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  opacity: 0.95;
+}
+
+.footerList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.footerItem {
+  margin: 0;
+}
+
+.footerLink {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.office {
+  font-size: 0.95rem;
+}
+
+.office strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.address,
+.office p {
+  margin: 0 0 0.5rem;
+}
+
+.office a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.office a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.phone {
+  margin-top: 0.25rem;
+}
+
+.hours {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.phoneMenu {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.phoneMenu :global(p) {
+  margin: 0;
+}
+
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.social a {
+  color: #888;
+  text-decoration: none;
+}
+
+.social a:hover {
+  color: #fff;
+}

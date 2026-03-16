@@ -1,0 +1,60 @@
+{
+  "id": "main_pathways",
+  "type": "SharedSlice",
+  "name": "MainPathways",
+  "description": "Request Parts / Service / Rental pathways",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "Repeatable pathway cards",
+      "primary": {
+        "section_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section heading (optional)",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Request Parts"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": ""
+          }
+        },
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "Icon (optional)",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

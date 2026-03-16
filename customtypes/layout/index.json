@@ -1,0 +1,174 @@
+{
+  "id": "layout",
+  "label": "Layout",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Site config": {
+      "header_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Header logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "footer_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Footer logo (optional)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "favicon": {
+        "type": "Image",
+        "config": {
+          "label": "Favicon (optional)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "aberdeen_address": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Aberdeen address",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
+      "aberdeen_phone": {
+        "type": "Text",
+        "config": {
+          "label": "Aberdeen phone",
+          "placeholder": "+44 (0) 1224 790970"
+        }
+      },
+      "aberdeen_email": {
+        "type": "Text",
+        "config": {
+          "label": "Aberdeen email",
+          "placeholder": "info@microneagle.com"
+        }
+      },
+      "aberdeen_hours": {
+        "type": "Text",
+        "config": {
+          "label": "Aberdeen opening hours",
+          "placeholder": "Mon–Fri: 8am – 5pm"
+        }
+      },
+      "houston_address": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Houston address",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
+      "houston_phone": {
+        "type": "Text",
+        "config": {
+          "label": "Houston phone",
+          "placeholder": "+1 713 812 0720"
+        }
+      },
+      "houston_email": {
+        "type": "Text",
+        "config": {
+          "label": "Houston email",
+          "placeholder": ""
+        }
+      },
+      "phone_menu": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Phone menu (optional)",
+          "placeholder": "Press 1 for Sales, 2 for Repair...",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
+      "primary_email": {
+        "type": "Text",
+        "config": {
+          "label": "Primary email (optional)",
+          "placeholder": "Default for forms"
+        }
+      },
+      "social_links": {
+        "type": "Group",
+        "config": {
+          "label": "Social links",
+          "fields": {
+            "platform": {
+              "type": "Select",
+              "config": {
+                "label": "Platform",
+                "options": ["LinkedIn", "Instagram", "Twitter", "YouTube", "Other"]
+              }
+            },
+            "url": {
+              "type": "Link",
+              "config": {
+                "label": "URL",
+                "placeholder": "https://..."
+              }
+            }
+          }
+        }
+      }
+    },
+    "Header & navigation": {
+      "nav_links": {
+        "type": "Group",
+        "config": {
+          "label": "Nav links",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "Services"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "Page or URL"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Footer": {
+      "footer_links": {
+        "type": "Group",
+        "config": {
+          "label": "Footer links",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "Link text"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

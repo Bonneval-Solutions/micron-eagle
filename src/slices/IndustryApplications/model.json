@@ -1,0 +1,60 @@
+{
+  "id": "industry_applications",
+  "type": "SharedSlice",
+  "name": "IndustryApplications",
+  "description": "Offshore / Marine / Industrial / Mobile",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "Repeatable industry cards",
+      "primary": {
+        "section_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section heading",
+            "placeholder": "Industries we serve",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Offshore"
+          }
+        },
+        "copy": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Short copy",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image (optional)",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

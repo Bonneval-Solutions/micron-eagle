@@ -1,0 +1,49 @@
+{
+  "default": {
+    "header_logo": {},
+    "footer_logo": {},
+    "favicon": {},
+    "aberdeen_address": [
+      {
+        "type": "paragraph",
+        "content": { "text": "Blackburn Industrial Estate, Kinellar, Aberdeen, AB21 0RX, Scotland" }
+      }
+    ],
+    "aberdeen_phone": "+44 (0) 1224 790970",
+    "aberdeen_email": "info@microneagle.com",
+    "aberdeen_hours": "Mon–Fri: 8am – 5pm, Sat–Sun: Closed",
+    "houston_address": [
+      {
+        "type": "paragraph",
+        "content": { "text": "1291 N Post Oak Road, Suite 170, Houston, Texas 77055, USA" }
+      }
+    ],
+    "houston_phone": "+1 713 812 0720",
+    "houston_email": "info@microneagle.com",
+    "phone_menu": [
+      {
+        "type": "paragraph",
+        "content": { "text": "Press 1 for Sales, 2 for Repair, 3 for Engineering, 4 for Accounts, 5 for all other enquiries." }
+      }
+    ],
+    "primary_email": "info@microneagle.com",
+    "social_links": [
+      { "platform": "LinkedIn", "url": { "link_type": "Web", "url": "https://www.linkedin.com/company/micron-eagle" } },
+      { "platform": "Instagram", "url": { "link_type": "Web", "url": "https://www.instagram.com/microneagle" } }
+    ],
+    "nav_links": [
+      { "label": "Home", "link": { "link_type": "Document", "uid": "home", "type": "page" } },
+      { "label": "Services", "link": { "link_type": "Document", "uid": "services", "type": "page" } },
+      { "label": "Spare Parts", "link": { "link_type": "Document", "uid": "spare-parts", "type": "page" } },
+      { "label": "Industries", "link": { "link_type": "Document", "uid": "industries", "type": "page" } },
+      { "label": "About", "link": { "link_type": "Document", "uid": "about", "type": "page" } },
+      { "label": "Insights", "link": { "link_type": "Document", "uid": "insights", "type": "page" } },
+      { "label": "Contact", "link": { "link_type": "Document", "uid": "contact", "type": "page" } }
+    ],
+    "footer_links": [
+      { "label": "Services", "link": { "link_type": "Document", "uid": "services", "type": "page" } },
+      { "label": "Spare Parts", "link": { "link_type": "Document", "uid": "spare-parts", "type": "page" } },
+      { "label": "Contact", "link": { "link_type": "Document", "uid": "contact", "type": "page" } }
+    ]
+  }
+}

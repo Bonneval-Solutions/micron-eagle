@@ -1,0 +1,32 @@
+.whyMicronEagle {
+  padding: 4rem 2rem;
+  background: #f5f5f5;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heading {
+  margin-bottom: 1rem;
+}
+
+.heading :global(h2) {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.body :global(p) {
+  margin: 0 0 1rem;
+}
+
+.bullets {
+  margin: 1.5rem 0 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.bullet {
+  margin-bottom: 0.5rem;
+}

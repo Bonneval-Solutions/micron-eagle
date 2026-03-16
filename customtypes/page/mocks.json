@@ -1,19 +1,72 @@
 [
   {
-    "uid": {
-      "__TYPE__": "UIDContent",
-      "value": "congress"
-    },
+    "uid": { "__TYPE__": "UIDContent", "value": "home" },
     "title": {
       "__TYPE__": "StructuredTextContent",
+      "value": [{ "type": "heading1", "content": { "text": "Micron Eagle Hydraulics" } }]
+    },
+    "section": "home",
+    "intro": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [{ "type": "paragraph", "content": { "text": "Helping To Keep Your Hydraulics World Moving" } }]
+    },
+    "slices": {
+      "__TYPE__": "SliceContentType",
       "value": [
         {
-          "type": "heading1",
-          "content": {
-            "text": "Medicine"
+          "key": "hero$default",
+          "name": "hero",
+          "widget": {
+            "__TYPE__": "SharedSliceContent",
+            "variation": "default",
+            "primary": {
+              "headline": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [{ "type": "heading1", "content": { "text": "Hydraulic Parts, Field Service and Engineering Support — Onshore and Offshore" } }]
+              },
+              "subheadline": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [{ "type": "paragraph", "content": { "text": "From repair and test to rental and sales. We have the expertise to help." } }]
+              },
+              "primary_cta_label": "Request Parts",
+              "primary_cta_link": { "link_type": "Document", "type": "page", "uid": "parts-enquiry" },
+              "secondary_cta_label": "Speak to an Engineer",
+              "secondary_cta_link": { "link_type": "Document", "type": "page", "uid": "contact" },
+              "background_image": {}
+            },
+            "items": []
+          }
+        },
+        {
+          "key": "rich_text$default",
+          "name": "rich_text",
+          "widget": {
+            "__TYPE__": "SharedSliceContent",
+            "variation": "default",
+            "primary": {
+              "content": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "From Repair and Test to Rental and Sales, Micron Eagle Hydraulics can provide a wide range of fluid power services."
+                    }
+                  }
+                ]
+              }
+            },
+            "items": []
           }
         }
       ]
+    }
+  },
+  {
+    "uid": { "__TYPE__": "UIDContent", "value": "congress" },
+    "title": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [{ "type": "heading1", "content": { "text": "Medicine" } }]
     },
     "slices": {
       "__TYPE__": "SliceContentType",
@@ -37,12 +90,7 @@
                 ]
               }
             },
-            "items": [
-              {
-                "__TYPE__": "GroupItemContent",
-                "value": []
-              }
-            ]
+            "items": []
           }
         }
       ]

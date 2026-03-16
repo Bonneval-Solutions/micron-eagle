@@ -1,0 +1,52 @@
+.testimonials {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+}
+
+.heading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.heading :global(h2) {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  margin: 0;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  border-left: 4px solid #1a1a1a;
+}
+
+.card :global(p) {
+  margin: 0 0 1rem;
+  font-style: italic;
+}
+
+.footer {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.attribution {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.role {
+  display: block;
+  margin-top: 0.25rem;
+  font-weight: normal;
+  color: #666;
+}

@@ -1,0 +1,45 @@
+{
+  "id": "why_micron_eagle",
+  "type": "SharedSlice",
+  "name": "WhyMicronEagle",
+  "description": "Trust block - founded, capabilities, certifications",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "Headline, body, repeatable bullets",
+      "primary": {
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "placeholder": "Why Micron Eagle",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        }
+      },
+      "items": {
+        "bullet": {
+          "type": "Text",
+          "config": {
+            "label": "Bullet / key stat",
+            "placeholder": "Founded 1990"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

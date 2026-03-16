@@ -4,7 +4,16 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | HeroSlice
+  | MainPathwaysSlice
+  | CoreServicesSlice
+  | IndustryApplicationsSlice
+  | WhyMicronEagleSlice
+  | CertificationsPartnersSlice
+  | TestimonialsSlice
+  | CtaBandSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -20,6 +29,9 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.TitleField;
+
+  section?: prismic.SelectField<"home" | "services" | "spare-parts" | "industries" | "about" | "insights" | "contact">;
+  intro?: prismic.RichTextField;
 
   /**
    * Slice Zone field in *Page*
@@ -76,7 +88,152 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = PageDocument;
+/**
+ * Content for Layout documents (single)
+ */
+interface LayoutDocumentData {
+  header_logo: prismic.ImageField<never>;
+  footer_logo: prismic.ImageField<never>;
+  favicon: prismic.ImageField<never>;
+  aberdeen_address: prismic.RichTextField;
+  aberdeen_phone: prismic.KeyTextField;
+  aberdeen_email: prismic.KeyTextField;
+  aberdeen_hours: prismic.KeyTextField;
+  houston_address: prismic.RichTextField;
+  houston_phone: prismic.KeyTextField;
+  houston_email: prismic.KeyTextField;
+  phone_menu: prismic.RichTextField;
+  primary_email: prismic.KeyTextField;
+  social_links: prismic.GroupField<Simplify<LayoutDocumentDataSocialLinksItem>>;
+  nav_links: prismic.GroupField<Simplify<LayoutDocumentDataNavLinksItem>>;
+  footer_links: prismic.GroupField<Simplify<LayoutDocumentDataFooterLinksItem>>;
+}
+
+interface LayoutDocumentDataSocialLinksItem {
+  platform: prismic.SelectField<"LinkedIn" | "Instagram" | "Twitter" | "YouTube" | "Other">;
+  url: prismic.LinkField;
+}
+
+interface LayoutDocumentDataNavLinksItem {
+  label: prismic.KeyTextField;
+  link: prismic.LinkField;
+}
+
+interface LayoutDocumentDataFooterLinksItem {
+  label: prismic.KeyTextField;
+  link: prismic.LinkField;
+}
+
+export type LayoutDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<LayoutDocumentData>, "layout", Lang>;
+
+export type AllDocumentTypes = LayoutDocument | PageDocument;
+
+/** Hero slice */
+export interface HeroSliceDefaultPrimary {
+  headline: prismic.RichTextField;
+  subheadline: prismic.RichTextField;
+  primary_cta_label: prismic.KeyTextField;
+  primary_cta_link: prismic.LinkField;
+  secondary_cta_label: prismic.KeyTextField;
+  secondary_cta_link: prismic.LinkField;
+  background_image: prismic.ImageField<never>;
+}
+export type HeroSliceDefault = prismic.SharedSliceVariation<"default", Simplify<HeroSliceDefaultPrimary>, never>;
+type HeroSliceVariation = HeroSliceDefault;
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/** MainPathways slice */
+export interface MainPathwaysSliceDefaultPrimary {
+  section_heading: prismic.RichTextField;
+}
+export interface MainPathwaysSliceDefaultItem {
+  title: prismic.KeyTextField;
+  description: prismic.RichTextField;
+  link: prismic.LinkField;
+  icon: prismic.ImageField<never>;
+}
+export type MainPathwaysSliceDefault = prismic.SharedSliceVariation<"default", Simplify<MainPathwaysSliceDefaultPrimary>, Simplify<MainPathwaysSliceDefaultItem>>;
+type MainPathwaysSliceVariation = MainPathwaysSliceDefault;
+export type MainPathwaysSlice = prismic.SharedSlice<"main_pathways", MainPathwaysSliceVariation>;
+
+/** CoreServices slice */
+export interface CoreServicesSliceDefaultPrimary {
+  section_heading: prismic.RichTextField;
+}
+export interface CoreServicesSliceDefaultItem {
+  title: prismic.KeyTextField;
+  description: prismic.RichTextField;
+  link: prismic.LinkField;
+  image: prismic.ImageField<never>;
+}
+export type CoreServicesSliceDefault = prismic.SharedSliceVariation<"default", Simplify<CoreServicesSliceDefaultPrimary>, Simplify<CoreServicesSliceDefaultItem>>;
+type CoreServicesSliceVariation = CoreServicesSliceDefault;
+export type CoreServicesSlice = prismic.SharedSlice<"core_services", CoreServicesSliceVariation>;
+
+/** IndustryApplications slice */
+export interface IndustryApplicationsSliceDefaultPrimary {
+  section_heading: prismic.RichTextField;
+}
+export interface IndustryApplicationsSliceDefaultItem {
+  title: prismic.KeyTextField;
+  copy: prismic.RichTextField;
+  link: prismic.LinkField;
+  image: prismic.ImageField<never>;
+}
+export type IndustryApplicationsSliceDefault = prismic.SharedSliceVariation<"default", Simplify<IndustryApplicationsSliceDefaultPrimary>, Simplify<IndustryApplicationsSliceDefaultItem>>;
+type IndustryApplicationsSliceVariation = IndustryApplicationsSliceDefault;
+export type IndustryApplicationsSlice = prismic.SharedSlice<"industry_applications", IndustryApplicationsSliceVariation>;
+
+/** WhyMicronEagle slice */
+export interface WhyMicronEagleSliceDefaultPrimary {
+  headline: prismic.RichTextField;
+  body: prismic.RichTextField;
+}
+export interface WhyMicronEagleSliceDefaultItem {
+  bullet: prismic.KeyTextField;
+}
+export type WhyMicronEagleSliceDefault = prismic.SharedSliceVariation<"default", Simplify<WhyMicronEagleSliceDefaultPrimary>, Simplify<WhyMicronEagleSliceDefaultItem>>;
+type WhyMicronEagleSliceVariation = WhyMicronEagleSliceDefault;
+export type WhyMicronEagleSlice = prismic.SharedSlice<"why_micron_eagle", WhyMicronEagleSliceVariation>;
+
+/** CertificationsPartners slice */
+export interface CertificationsPartnersSliceDefaultPrimary {
+  headline: prismic.RichTextField;
+}
+export interface CertificationsPartnersSliceDefaultItem {
+  image: prismic.ImageField<never>;
+  link: prismic.LinkField;
+  label: prismic.KeyTextField;
+}
+export type CertificationsPartnersSliceDefault = prismic.SharedSliceVariation<"default", Simplify<CertificationsPartnersSliceDefaultPrimary>, Simplify<CertificationsPartnersSliceDefaultItem>>;
+type CertificationsPartnersSliceVariation = CertificationsPartnersSliceDefault;
+export type CertificationsPartnersSlice = prismic.SharedSlice<"certifications_partners", CertificationsPartnersSliceVariation>;
+
+/** Testimonials slice */
+export interface TestimonialsSliceDefaultPrimary {
+  section_heading: prismic.RichTextField;
+}
+export interface TestimonialsSliceDefaultItem {
+  quote: prismic.RichTextField;
+  attribution: prismic.KeyTextField;
+  role_company: prismic.KeyTextField;
+}
+export type TestimonialsSliceDefault = prismic.SharedSliceVariation<"default", Simplify<TestimonialsSliceDefaultPrimary>, Simplify<TestimonialsSliceDefaultItem>>;
+type TestimonialsSliceVariation = TestimonialsSliceDefault;
+export type TestimonialsSlice = prismic.SharedSlice<"testimonials", TestimonialsSliceVariation>;
+
+/** CtaBand slice */
+export interface CtaBandSliceDefaultPrimary {
+  headline: prismic.RichTextField;
+}
+export interface CtaBandSliceDefaultItem {
+  cta_label: prismic.KeyTextField;
+  cta_link: prismic.LinkField;
+}
+export type CtaBandSliceDefault = prismic.SharedSliceVariation<"default", Simplify<CtaBandSliceDefaultPrimary>, Simplify<CtaBandSliceDefaultItem>>;
+type CtaBandSliceVariation = CtaBandSliceDefault;
+export type CtaBandSlice = prismic.SharedSlice<"cta_band", CtaBandSliceVariation>;
 
 /**
  * Primary content in *RichText → Primary*
@@ -133,10 +290,20 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      LayoutDocument,
+      LayoutDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HeroSlice,
+      MainPathwaysSlice,
+      CoreServicesSlice,
+      IndustryApplicationsSlice,
+      WhyMicronEagleSlice,
+      CertificationsPartnersSlice,
+      TestimonialsSlice,
+      CtaBandSlice,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
