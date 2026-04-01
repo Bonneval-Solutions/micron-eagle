@@ -21,7 +21,11 @@ export function Footer({ config, footerLinks }: FooterProps) {
         <div className={styles.top}>
           {logo && (
             <div className={styles.logo}>
-              <PrismicNextImage field={logo} height={40} />
+              <PrismicNextImage
+                field={logo}
+                height={40}
+                fallbackAlt=""
+              />
             </div>
           )}
           <nav className={styles.footerNav} aria-label="Footer">

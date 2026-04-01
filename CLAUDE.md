@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+For a longer walkthrough of Prismic custom types, routing, slices, and header/footer wiring (usable as a template for other sites), see [`docs/prismic-site-structure.md`](docs/prismic-site-structure.md).
+
 ## Commands
 
 ```bash

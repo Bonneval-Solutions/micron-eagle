@@ -1,62 +1,122 @@
 .hero {
   position: relative;
-  min-height: 60vh;
+  min-height: clamp(520px, 78vh, 760px);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  justify-content: flex-start;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .heroBg {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -2;
 }
 
 .heroBg img {
   object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(2, 8, 23, 0.84) 0%, rgba(2, 8, 23, 0.68) 34%, rgba(2, 8, 23, 0.2) 62%, rgba(2, 8, 23, 0.08) 100%),
+    linear-gradient(180deg, rgba(2, 8, 23, 0.28) 0%, rgba(2, 8, 23, 0.38) 100%);
 }
 
 .heroContent {
   position: relative;
-  z-index: 1;
-  max-width: 800px;
-  text-align: center;
+  max-width: min(640px, 100%);
+  color: #fff;
+  text-align: left;
+  opacity: 0;
 }
 
-.heroContent :global(h1) {
-  margin: 0 0 1rem;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+.headline,
+.subheadline,
+.ctas {
+  opacity: 0;
 }
 
-.heroContent :global(p) {
-  margin: 0 0 1.5rem;
-  font-size: 1.125rem;
+.headline :global(h1) {
+  margin: 0;
+  font-size: clamp(2.2rem, 6.4vw, 5rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.subheadline {
+  margin-top: clamp(1rem, 2vw, 1.65rem);
+  max-width: 60ch;
+}
+
+.subheadline :global(p) {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(0.98rem, 1.25vw, 1.15rem);
+  line-height: 1.7;
 }
 
 .ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.9rem;
+  justify-content: flex-start;
+  margin-top: clamp(1.4rem, 2.5vw, 2rem);
 }
 
 .primaryCta,
 .secondaryCta {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  padding: 0.82rem 1.45rem;
+  border-radius: 0.3rem;
   text-decoration: none;
   font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.primaryCta:hover,
+.secondaryCta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
 }
 
 .primaryCta {
-  background: #1a1a1a;
+  background: #4f46e5;
   color: #fff;
 }
 
 .secondaryCta {
   background: transparent;
-  color: #1a1a1a;
-  border: 2px solid #1a1a1a;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 68vh;
+    align-items: flex-end;
+    padding: 1.25rem;
+  }
+
+  .overlay {
+    background:
+      linear-gradient(180deg, rgba(2, 8, 23, 0.38) 0%, rgba(2, 8, 23, 0.85) 78%, rgba(2, 8, 23, 0.94) 100%),
+      linear-gradient(90deg, rgba(2, 8, 23, 0.2) 0%, rgba(2, 8, 23, 0.2) 100%);
+  }
+
+  .heroContent {
+    max-width: 100%;
+  }
 }

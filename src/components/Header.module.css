@@ -1,6 +1,7 @@
 .header {
   border-bottom: 1px solid #e0e0e0;
   background: #fff;
+  position: relative;
 }
 
 .inner {
@@ -35,6 +36,59 @@
   flex: 1;
 }
 
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+}
+
+.menuIcon,
+.menuIcon::before,
+.menuIcon::after {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: #222;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  content: "";
+}
+
+.menuIcon {
+  position: relative;
+}
+
+.menuIcon::before {
+  position: absolute;
+  top: -0.4rem;
+  left: 0;
+}
+
+.menuIcon::after {
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+}
+
+.menuButton[data-open="true"] .menuIcon {
+  background: transparent;
+}
+
+.menuButton[data-open="true"] .menuIcon::before {
+  transform: translateY(0.4rem) rotate(45deg);
+}
+
+.menuButton[data-open="true"] .menuIcon::after {
+  transform: translateY(-0.4rem) rotate(-45deg);
+}
+
 .navList {
   list-style: none;
   margin: 0;
@@ -59,4 +113,56 @@
 .navLink:hover {
   color: #000;
   text-decoration: underline;
+}
+
+@media (max-width: 820px) {
+  .inner {
+    position: relative;
+    padding: 0.875rem 1rem;
+    gap: 1rem;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+
+  .nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 280ms ease-in-out,
+      opacity 280ms ease-in-out;
+    background: #fff;
+    border-bottom: 0;
+    padding: 5.5rem 1.5rem 1.5rem;
+    z-index: 15;
+    overflow-y: auto;
+  }
+
+  .nav[data-open="true"] {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .navLink {
+    display: block;
+    padding: 0.6rem 0;
+    font-size: 1.35rem;
+    text-align: right;
+  }
 }

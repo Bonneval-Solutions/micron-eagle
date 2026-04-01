@@ -27,7 +27,7 @@
         "config": {
           "label": "Section",
           "placeholder": "Choose section for nav grouping",
-          "options": ["home", "services", "spare-parts", "industries", "about", "insights", "contact"]
+          "options": ["Home","Services on-site", "Services and Repairs", "Spare-parts", "About", "Others", "contact"]
         }
       },
       "intro": {
