@@ -1,0 +1,83 @@
+{
+  "id": "team_section",
+  "type": "SharedSlice",
+  "name": "TeamSection",
+  "description": "Team member grid with photo, name, role and bio",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "Grid of team member cards",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow label (optional)",
+            "placeholder": "Our People"
+          }
+        },
+        "section_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section heading",
+            "placeholder": "The Team Behind the Work",
+            "allowTargetBlank": false,
+            "single": "heading2"
+          }
+        },
+        "subtext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subtext (optional)",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph"
+          }
+        }
+      },
+      "items": {
+        "photo": {
+          "type": "Image",
+          "config": {
+            "label": "Photo",
+            "constraint": { "width": 600, "height": 750 },
+            "thumbnails": []
+          }
+        },
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": "John Smith"
+          }
+        },
+        "role": {
+          "type": "Text",
+          "config": {
+            "label": "Role / Title",
+            "placeholder": "Lead Hydraulic Technician"
+          }
+        },
+        "bio": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Short bio (optional)",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph"
+          }
+        },
+        "linkedin_url": {
+          "type": "Link",
+          "config": {
+            "label": "LinkedIn URL (optional)",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "faq",
+  "type": "SharedSlice",
+  "name": "Faq",
+  "description": "FAQ accordion with sidebar heading",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "Sidebar heading with expandable question/answer list",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow label (optional)",
+            "placeholder": "FAQ"
+          }
+        },
+        "section_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section heading",
+            "placeholder": "Common Questions",
+            "allowTargetBlank": false,
+            "single": "heading2"
+          }
+        },
+        "subtext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subtext (optional)",
+            "placeholder": "Can't find what you're looking for? Contact our team.",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "cta_label": {
+          "type": "Text",
+          "config": {
+            "label": "CTA label (optional)",
+            "placeholder": "Contact us"
+          }
+        },
+        "cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "CTA link (optional)",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "question": {
+          "type": "Text",
+          "config": {
+            "label": "Question",
+            "placeholder": "How long does a repair take?"
+          }
+        },
+        "answer": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Answer",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

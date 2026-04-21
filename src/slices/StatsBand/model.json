@@ -1,0 +1,33 @@
+{
+  "id": "stats_band",
+  "type": "SharedSlice",
+  "name": "StatsBand",
+  "description": "Full-width red band with 2–4 key statistics",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "Bold stat numbers with labels on a brand-red background",
+      "primary": {},
+      "items": {
+        "number": {
+          "type": "Text",
+          "config": {
+            "label": "Stat number / value",
+            "placeholder": "450HP"
+          }
+        },
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Stat label",
+            "placeholder": "Test Rig Capacity"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

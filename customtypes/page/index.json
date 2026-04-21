@@ -70,6 +70,39 @@
             },
             "rich_text": {
               "type": "SharedSlice"
+            },
+            "faq": {
+              "type": "SharedSlice"
+            },
+            "team_section": {
+              "type": "SharedSlice"
+            },
+            "blog_grid": {
+              "type": "SharedSlice"
+            },
+            "main_pathways_v2": {
+              "type": "SharedSlice"
+            },
+            "core_services_v2": {
+              "type": "SharedSlice"
+            },
+            "industry_applications_v2": {
+              "type": "SharedSlice"
+            },
+            "why_micron_eagle_v2": {
+              "type": "SharedSlice"
+            },
+            "certifications_partners_v2": {
+              "type": "SharedSlice"
+            },
+            "testimonials_v2": {
+              "type": "SharedSlice"
+            },
+            "cta_band_v2": {
+              "type": "SharedSlice"
+            },
+            "stats_band": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -1,0 +1,159 @@
+/* CertificationsPartners slice — redesigned */
+
+.certificationsPartners {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: #fff;
+  border-top: 1px solid #eaecef;
+  border-bottom: 1px solid #eaecef;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Optional headline (full-width) */
+.headline {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.headline :global(h2) {
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+  color: #0f1e2d;
+}
+
+/* Section labels */
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5b6880;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Vertical divider */
+.divider {
+  width: 1px;
+  height: 40px;
+  background: #eaecef;
+  flex-shrink: 0;
+}
+
+/* Partner logos */
+.logos {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.logoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.logoItem:hover { opacity: 1; }
+
+.logoBox {
+  width: 100px;
+  height: 48px;
+  background: #f5f6f7;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.4rem;
+}
+
+.logoImg {
+  object-fit: contain;
+  max-height: 40px;
+  width: auto;
+}
+
+.logoFallback {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5b6880;
+  text-align: center;
+}
+
+.logoName {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #5b6880;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ISO badges */
+.isoGroup {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.isoBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 2px solid #eaecef;
+  padding: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+.isoBadge:hover { border-color: #a9111f; }
+
+.isoBadgeTop {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a9111f;
+  line-height: 1;
+}
+
+.isoBadgeNum {
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #0f1e2d;
+}
+
+.isoBadgeYear {
+  font-size: 0.52rem;
+  color: #5b6880;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .divider { display: none; }
+  .label { width: 100%; text-align: center; }
+  .isoGroup { justify-content: center; }
+}

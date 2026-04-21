@@ -1,0 +1,74 @@
+{
+  "id": "why_micron_eagle_v2",
+  "type": "SharedSlice",
+  "name": "WhyMicronEagleV2",
+  "description": "Split layout - image left, content right with bullet points",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "2",
+      "description": "Image + headline + body + bullet list + optional CTA",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image (left column)",
+            "constraint": { "width": 800, "height": 600 },
+            "thumbnails": []
+          }
+        },
+        "founded_year": {
+          "type": "Text",
+          "config": {
+            "label": "Founded year (shown on image accent - e.g. 1990)",
+            "placeholder": "1990"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "placeholder": "Trusted by industry for over three decades",
+            "allowTargetBlank": false,
+            "single": "heading2"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
+          }
+        },
+        "cta_label": {
+          "type": "Text",
+          "config": {
+            "label": "CTA label (optional)",
+            "placeholder": "Learn about our company"
+          }
+        },
+        "cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "CTA link (optional)",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "bullet": {
+          "type": "Text",
+          "config": {
+            "label": "Bullet point",
+            "placeholder": "ISO 9001, 14001 & 45001 certified"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

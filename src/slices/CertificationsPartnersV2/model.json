@@ -1,0 +1,86 @@
+{
+  "id": "certifications_partners_v2",
+  "type": "SharedSlice",
+  "name": "CertificationsPartnersV2",
+  "description": "Partner logos + ISO certification badges",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "2",
+      "description": "Logo strip with optional ISO cert badges",
+      "primary": {
+        "partners_label": {
+          "type": "Text",
+          "config": {
+            "label": "Partners section label",
+            "placeholder": "Trusted Partners"
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline (optional)",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "heading2"
+          }
+        },
+        "show_iso_certs": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show ISO certifications?",
+            "default_value": true
+          }
+        },
+        "iso_cert_1": {
+          "type": "Text",
+          "config": {
+            "label": "ISO cert 1 (e.g. 9001:2015)",
+            "placeholder": "9001:2015"
+          }
+        },
+        "iso_cert_2": {
+          "type": "Text",
+          "config": {
+            "label": "ISO cert 2 (e.g. 14001:2015)",
+            "placeholder": "14001:2015"
+          }
+        },
+        "iso_cert_3": {
+          "type": "Text",
+          "config": {
+            "label": "ISO cert 3 (e.g. 45001:2018)",
+            "placeholder": "45001:2018"
+          }
+        }
+      },
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Partner / brand logo",
+            "constraint": { "width": 200, "height": 100 },
+            "thumbnails": []
+          }
+        },
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Partner name / label",
+            "placeholder": "Danfoss"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link (optional)",
+            "placeholder": ""
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+/* CoreServices slice — redesigned */
+
+.coreServices {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* Header */
+.header {
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #a9111f;
+  margin-bottom: 0.85rem;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #a9111f;
+  flex-shrink: 0;
+}
+
+.heading :global(h2) {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #0f1e2d;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border: 1px solid #eaecef;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+.card:hover {
+  border-color: transparent;
+  box-shadow: 0 12px 36px rgba(15, 30, 45, 0.13);
+  transform: translateY(-3px);
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #1a2d42;
+}
+.image :global(img) {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.card:hover .image :global(img) {
+  transform: scale(1.03);
+}
+
+.body {
+  padding: 1.5rem 1.5rem 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #0f1e2d;
+}
+
+.arrow {
+  font-size: 1.05rem;
+  color: #5b6880;
+  flex-shrink: 0;
+  transition: transform 0.22s ease, color 0.22s ease;
+  margin-top: 0.1rem;
+}
+.card:hover .arrow {
+  transform: translate(3px, -3px);
+  color: #a9111f;
+}
+
+.card :global(p) {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #5b6880;
+  line-height: 1.65;
+}
+
+.tag {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #eaecef;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a9111f;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .grid { grid-template-columns: 1fr; }
+}

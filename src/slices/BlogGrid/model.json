@@ -1,0 +1,103 @@
+{
+  "id": "blog_grid",
+  "type": "SharedSlice",
+  "name": "BlogGrid",
+  "description": "Grid of blog/news article cards",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "1",
+      "description": "3-column article grid with cover image, category, date and excerpt",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow label (optional)",
+            "placeholder": "Insights"
+          }
+        },
+        "section_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section heading",
+            "placeholder": "Latest from Micron Eagle",
+            "allowTargetBlank": false,
+            "single": "heading2"
+          }
+        },
+        "view_all_label": {
+          "type": "Text",
+          "config": {
+            "label": "View all label (optional)",
+            "placeholder": "All articles"
+          }
+        },
+        "view_all_link": {
+          "type": "Link",
+          "config": {
+            "label": "View all link (optional)",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "cover_image": {
+          "type": "Image",
+          "config": {
+            "label": "Cover image",
+            "constraint": { "width": 800, "height": 450 },
+            "thumbnails": []
+          }
+        },
+        "category": {
+          "type": "Text",
+          "config": {
+            "label": "Category tag",
+            "placeholder": "Hydraulic Repair"
+          }
+        },
+        "date": {
+          "type": "Date",
+          "config": {
+            "label": "Publication date"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Article title",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "heading3"
+          }
+        },
+        "excerpt": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Excerpt",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link to article",
+            "placeholder": ""
+          }
+        },
+        "read_more_label": {
+          "type": "Text",
+          "config": {
+            "label": "Read more label (optional)",
+            "placeholder": "Read article"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

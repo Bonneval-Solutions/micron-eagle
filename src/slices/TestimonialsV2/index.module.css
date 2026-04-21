@@ -1,0 +1,146 @@
+/* Testimonials slice — redesigned */
+
+.testimonials {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: #0f1e2d;
+  position: relative;
+  overflow: hidden;
+}
+.testimonials::before {
+  content: '\201C';
+  position: absolute;
+  top: -2rem;
+  left: clamp(1.25rem, 4vw, 2.5rem);
+  font-family: Georgia, serif;
+  font-size: clamp(14rem, 20vw, 22rem);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  user-select: none;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.header {
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0.75rem;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.heading :global(h2) {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(169, 17, 31, 0.4);
+}
+
+.stars { display: flex; gap: 0.2rem; }
+.star { color: #e5b82a; font-size: 0.9rem; }
+
+.quote {
+  flex: 1;
+}
+.quote :global(p) {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.25rem;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.name {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.role {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 580px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 1.5rem; }
+}
