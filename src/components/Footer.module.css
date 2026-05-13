@@ -49,11 +49,12 @@
   text-decoration: underline;
 }
 
-.contact {
+.offices {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   padding: 2rem 0;
+  border-bottom: 1px solid #333;
 }
 
 .office {
@@ -115,4 +116,49 @@
 
 .social a:hover {
   color: #fff;
+}
+
+.footerSubList {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+}
+
+.footerSubItem {
+  margin: 0;
+}
+
+.footerSubLink {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.footerSubLink:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+.legalRow {
+  padding-top: 1.5rem;
+}
+
+.legalList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.legalLink {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.legalLink:hover {
+  color: #aaa;
+  text-decoration: underline;
 }

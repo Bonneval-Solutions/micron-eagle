@@ -11,6 +11,8 @@ export default async function RootLayout({
 }>) {
   const client = createClient();
   const layout = await client.getSingle("layout").catch(() => null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const d = layout?.data as any;
 
   return (
     <html lang="en">
@@ -23,7 +25,10 @@ export default async function RootLayout({
         <main>{children}</main>
         <Footer
           config={layout?.data ?? null}
-          footerLinks={layout?.data?.footer_links ?? []}
+          navLinks={layout?.data?.nav_links ?? []}
+          navDropdownItems={layout?.data?.nav_dropdown_items ?? []}
+          footerOffices={d?.footer_offices ?? []}
+          footerLegalLinks={d?.footer_legal_links ?? []}
         />
         <PrismicPreview repositoryName={repositoryName} />
       </body>

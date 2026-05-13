@@ -179,13 +179,80 @@
       "footer_links": {
         "type": "Group",
         "config": {
-          "label": "Footer links",
+          "label": "Footer links (legacy — use nav_links instead)",
           "fields": {
             "label": {
               "type": "Text",
               "config": {
                 "label": "Label",
                 "placeholder": "Link text"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "footer_offices": {
+        "type": "Group",
+        "config": {
+          "label": "Offices",
+          "fields": {
+            "office_name": {
+              "type": "Text",
+              "config": {
+                "label": "Office name",
+                "placeholder": "Aberdeen (HQ)"
+              }
+            },
+            "address": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Address",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            },
+            "phone": {
+              "type": "Text",
+              "config": {
+                "label": "Phone",
+                "placeholder": "+44 (0) 1224 790970"
+              }
+            },
+            "email": {
+              "type": "Text",
+              "config": {
+                "label": "Email",
+                "placeholder": "info@microneagle.com"
+              }
+            },
+            "hours": {
+              "type": "Text",
+              "config": {
+                "label": "Opening hours",
+                "placeholder": "Mon–Fri: 8am – 5pm"
+              }
+            }
+          }
+        }
+      },
+      "footer_legal_links": {
+        "type": "Group",
+        "config": {
+          "label": "Legal links",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "Privacy Policy"
               }
             },
             "link": {
