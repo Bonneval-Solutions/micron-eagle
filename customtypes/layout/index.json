@@ -144,6 +144,35 @@
             }
           }
         }
+      },
+      "nav_dropdown_items": {
+        "type": "Group",
+        "config": {
+          "label": "Nav dropdown items",
+          "fields": {
+            "parent_label": {
+              "type": "Text",
+              "config": {
+                "label": "Parent label (must match nav link label exactly)",
+                "placeholder": "What We Do"
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "Pipe Inspection"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "Page or URL"
+              }
+            }
+          }
+        }
       }
     },
     "Footer": {

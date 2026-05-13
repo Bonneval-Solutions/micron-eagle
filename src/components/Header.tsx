@@ -6,14 +6,39 @@ import type { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import styles from "./Header.module.css";
 
+type NavDropdownItem =
+  Content.LayoutDocument["data"]["nav_dropdown_items"][number];
+
 type HeaderProps = {
   config: Content.LayoutDocument["data"] | null | undefined;
   navLinks: Content.LayoutDocument["data"]["nav_links"];
+  navDropdownItems: Content.LayoutDocument["data"]["nav_dropdown_items"];
 };
 
-export function Header({ config, navLinks }: HeaderProps) {
+export function Header({ config, navLinks, navDropdownItems }: HeaderProps) {
   const logo = config?.header_logo?.url ? config.header_logo : null;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdownIndex, setOpenDropdownIndex] = useState<number | null>(
+    null,
+  );
+
+  // Build a map from parent_label → sub-items for O(1) lookup per nav item
+  const dropdownMap = new Map<string, NavDropdownItem[]>();
+  for (const item of navDropdownItems ?? []) {
+    if (!item.parent_label) continue;
+    const key = item.parent_label.trim();
+    const existing = dropdownMap.get(key) ?? [];
+    dropdownMap.set(key, [...existing, item]);
+  }
+
+  function toggleDropdown(index: number) {
+    setOpenDropdownIndex((prev) => (prev === index ? null : index));
+  }
+
+  function closeAll() {
+    setOpenDropdownIndex(null);
+    setIsMenuOpen(false);
+  }
 
   return (
     <header className={styles.header}>
@@ -49,17 +74,83 @@ export function Header({ config, navLinks }: HeaderProps) {
           aria-label="Main"
         >
           <ul className={styles.navList}>
-            {navLinks?.map((item, i) => (
-              <li key={i} className={styles.navItem}>
-                <PrismicNextLink
-                  field={item.link}
-                  className={styles.navLink}
-                  onClick={() => setIsMenuOpen(false)}
+            {navLinks?.map((item, i) => {
+              const subItems = item.label
+                ? (dropdownMap.get(item.label.trim()) ?? [])
+                : [];
+              const hasDropdown = subItems.length > 0;
+              const isOpen = openDropdownIndex === i;
+
+              if (!hasDropdown) {
+                return (
+                  <li key={i} className={styles.navItem}>
+                    <PrismicNextLink
+                      field={item.link}
+                      className={styles.navLink}
+                      onClick={closeAll}
+                    >
+                      {item.label}
+                    </PrismicNextLink>
+                  </li>
+                );
+              }
+
+              return (
+                <li
+                  key={i}
+                  className={`${styles.navItem} ${styles.navItemWithDropdown}`}
+                  onMouseEnter={() => setOpenDropdownIndex(i)}
+                  onMouseLeave={() => setOpenDropdownIndex(null)}
                 >
-                  {item.label}
-                </PrismicNextLink>
-              </li>
-            ))}
+                  <button
+                    type="button"
+                    className={`${styles.navLink} ${styles.dropdownToggle}`}
+                    aria-expanded={isOpen}
+                    aria-haspopup="true"
+                    onClick={() => toggleDropdown(i)}
+                  >
+                    {item.label}
+                    <span
+                      className={styles.dropdownChevron}
+                      data-open={isOpen ? "true" : "false"}
+                      aria-hidden="true"
+                    />
+                  </button>
+
+                  <ul
+                    className={styles.dropdown}
+                    data-open={isOpen ? "true" : "false"}
+                    role="menu"
+                  >
+                    {/* Top-level link as first entry if there's a link on the parent */}
+                    {item.link && (
+                      <li className={styles.dropdownItem} role="none">
+                        <PrismicNextLink
+                          field={item.link}
+                          className={styles.dropdownLink}
+                          role="menuitem"
+                          onClick={closeAll}
+                        >
+                          {item.label} — Overview
+                        </PrismicNextLink>
+                      </li>
+                    )}
+                    {subItems.map((sub, j) => (
+                      <li key={j} className={styles.dropdownItem} role="none">
+                        <PrismicNextLink
+                          field={sub.link}
+                          className={styles.dropdownLink}
+                          role="menuitem"
+                          onClick={closeAll}
+                        >
+                          {sub.label}
+                        </PrismicNextLink>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>

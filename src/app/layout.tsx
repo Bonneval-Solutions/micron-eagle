@@ -18,6 +18,7 @@ export default async function RootLayout({
         <Header
           config={layout?.data ?? null}
           navLinks={layout?.data?.nav_links ?? []}
+          navDropdownItems={layout?.data?.nav_dropdown_items ?? []}
         />
         <main>{children}</main>
         <Footer

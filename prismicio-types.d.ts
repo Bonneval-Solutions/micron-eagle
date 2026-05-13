@@ -99,6 +99,41 @@ export interface LayoutDocumentDataNavLinksItem {
 }
 
 /**
+ * Item in *Layout → Nav dropdown items*
+ */
+export interface LayoutDocumentDataNavDropdownItemsItem {
+	/**
+	 * Parent label field in *Layout → Nav dropdown items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: What We Do
+	 * - **API ID Path**: layout.nav_dropdown_items[].parent_label
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	parent_label: prismic.KeyTextField;
+	
+	/**
+	 * Label field in *Layout → Nav dropdown items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Pipe Inspection
+	 * - **API ID Path**: layout.nav_dropdown_items[].label
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	label: prismic.KeyTextField;
+	
+	/**
+	 * Link field in *Layout → Nav dropdown items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: Page or URL
+	 * - **API ID Path**: layout.nav_dropdown_items[].link
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
  * Item in *Layout → Footer links*
  */
 export interface LayoutDocumentDataFooterLinksItem {
@@ -278,6 +313,15 @@ interface LayoutDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	nav_links: prismic.GroupField<Simplify<LayoutDocumentDataNavLinksItem>>;/**
+	 * Nav dropdown items field in *Layout*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: layout.nav_dropdown_items[]
+	 * - **Tab**: Header & navigation
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	nav_dropdown_items: prismic.GroupField<Simplify<LayoutDocumentDataNavDropdownItemsItem>>;/**
 	 * Footer links field in *Layout*
 	 *
 	 * - **Field Type**: Group
@@ -2140,6 +2184,7 @@ declare module "@prismicio/client" {
 			LayoutDocumentData,
 			LayoutDocumentDataSocialLinksItem,
 			LayoutDocumentDataNavLinksItem,
+			LayoutDocumentDataNavDropdownItemsItem,
 			LayoutDocumentDataFooterLinksItem,
 			PageDocument,
 			PageDocumentData,

@@ -115,6 +115,80 @@
   text-decoration: underline;
 }
 
+/* ── Dropdown ────────────────────────────────────────────── */
+
+.navItemWithDropdown {
+  position: relative;
+}
+
+.dropdownToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dropdownChevron {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-top: -2px;
+}
+
+.dropdownChevron[data-open="true"] {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 14rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 100;
+}
+
+.dropdown[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdownItem {
+  margin: 0;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.dropdownLink:hover {
+  background: #f5f5f5;
+  color: #000;
+}
+
 @media (max-width: 820px) {
   .inner {
     position: relative;
@@ -164,5 +238,42 @@
     padding: 0.6rem 0;
     font-size: 1.35rem;
     text-align: right;
+  }
+
+  .navItemWithDropdown {
+    position: static;
+  }
+
+  .dropdownToggle {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .dropdown {
+    position: static;
+    left: auto;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    border-radius: 0;
+    padding: 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease, max-height 0.25s ease;
+    pointer-events: none;
+  }
+
+  .dropdown[data-open="true"] {
+    opacity: 1;
+    max-height: 40rem;
+    pointer-events: auto;
+  }
+
+  .dropdownLink {
+    font-size: 1.1rem;
+    text-align: right;
+    padding: 0.5rem 0;
   }
 }
