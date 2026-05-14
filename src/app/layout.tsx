@@ -1,3 +1,4 @@
+import "./globals.css";
 import { PrismicPreview } from "@prismicio/next";
 import { createClient } from "@/prismicio";
 import { repositoryName } from "@/prismicio";
@@ -22,7 +23,7 @@ export default async function RootLayout({
           navLinks={layout?.data?.nav_links ?? []}
           navDropdownItems={layout?.data?.nav_dropdown_items ?? []}
         />
-        <main>{children}</main>
+        <main style={{ paddingTop: "var(--header-height)" }}>{children}</main>
         <Footer
           config={layout?.data ?? null}
           navLinks={layout?.data?.nav_links ?? []}

@@ -1,10 +1,14 @@
 .hero {
   position: relative;
-  min-height: clamp(520px, 78vh, 760px);
+  /* pull up to start at viewport top so the bg shows behind the fixed header */
+  margin-top: calc(-1 * var(--header-height));
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  /* extra top padding clears the transparent header */
   padding: clamp(1.5rem, 4vw, 4rem);
+  padding-top: calc(var(--header-height) + clamp(1.5rem, 4vw, 4rem));
   overflow: hidden;
   isolation: isolate;
 }
@@ -105,9 +109,10 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 68vh;
+    min-height: 100svh;
     align-items: flex-end;
     padding: 1.25rem;
+    padding-top: calc(var(--header-height) + 1.25rem);
   }
 
   .overlay {

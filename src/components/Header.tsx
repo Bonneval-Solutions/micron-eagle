@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import type { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import styles from "./Header.module.css";
@@ -21,6 +22,25 @@ export function Header({ config, navLinks, navDropdownItems }: HeaderProps) {
   const [openDropdownIndex, setOpenDropdownIndex] = useState<number | null>(
     null,
   );
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", handler, { passive: true });
+    handler();
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  const isHome = pathname === "/";
+  const transparent = isHome && !scrolled && !isMenuOpen;
 
   // Build a map from parent_label → sub-items for O(1) lookup per nav item
   const dropdownMap = new Map<string, NavDropdownItem[]>();
@@ -41,7 +61,9 @@ export function Header({ config, navLinks, navDropdownItems }: HeaderProps) {
   }
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${transparent ? styles.transparent : styles.solid}`}
+    >
       <div className={styles.inner}>
         <Link href="/" className={styles.logo} aria-label="Micron Eagle Home">
           {logo ? (
