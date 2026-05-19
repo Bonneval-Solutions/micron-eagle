@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import type { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import styles from "./Header.module.css";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { defaultLocale, type Locale } from "@/i18n";
 
 type NavDropdownItem =
   Content.LayoutDocument["data"]["nav_dropdown_items"][number];
@@ -14,9 +16,15 @@ type HeaderProps = {
   config: Content.LayoutDocument["data"] | null | undefined;
   navLinks: Content.LayoutDocument["data"]["nav_links"];
   navDropdownItems: Content.LayoutDocument["data"]["nav_dropdown_items"];
+  lang: Locale;
 };
 
-export function Header({ config, navLinks, navDropdownItems }: HeaderProps) {
+export function Header({
+  config,
+  navLinks,
+  navDropdownItems,
+  lang,
+}: HeaderProps) {
   const logo = config?.header_logo?.url ? config.header_logo : null;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdownIndex, setOpenDropdownIndex] = useState<number | null>(
@@ -39,7 +47,7 @@ export function Header({ config, navLinks, navDropdownItems }: HeaderProps) {
     };
   }, [isMenuOpen]);
 
-  const isHome = pathname === "/";
+  const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
   const transparent = isHome && !scrolled && !isMenuOpen;
 
   // Build a map from parent_label → sub-items for O(1) lookup per nav item
@@ -65,7 +73,11 @@ export function Header({ config, navLinks, navDropdownItems }: HeaderProps) {
       className={`${styles.header} ${transparent ? styles.transparent : styles.solid}`}
     >
       <div className={styles.inner}>
-        <Link href="/" className={styles.logo} aria-label="Micron Eagle Home">
+        <Link
+          href={`/${lang}`}
+          className={styles.logo}
+          aria-label="Micron Eagle Home"
+        >
           {logo ? (
             <PrismicNextImage
               field={config!.header_logo}
@@ -174,6 +186,7 @@ export function Header({ config, navLinks, navDropdownItems }: HeaderProps) {
               );
             })}
           </ul>
+          <LanguageSwitcher currentLang={lang} />
         </nav>
       </div>
     </header>

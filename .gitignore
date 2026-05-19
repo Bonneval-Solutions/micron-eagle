@@ -44,3 +44,8 @@ next-env.d.ts
 public/*.xlsx
 public/*.pdf
 public/*copie*
+
+# tooling / local only
+.claude/worktrees/
+.cursor/
+*.docx

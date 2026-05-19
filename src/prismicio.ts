@@ -14,10 +14,11 @@ export const repositoryName =
 
 /**
  * The project's Prismic route resolvers. This list determines a Prismic document's URL.
+ * One entry per locale so alternate_languages URLs resolve correctly.
  */
 const routes: Route[] = [
-  { type: "page", uid: "home", path: "/" },
-  { type: "page", path: "/:uid" },
+  { type: "page", uid: "home", path: "/:lang" },
+  { type: "page", path: "/:lang/:uid" },
 ];
 
 /**

@@ -1,4 +1,4 @@
-# CLAUDE.md
+# CLAUDE.md&@ui
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -6,7 +6,7 @@ For a longer walkthrough of Prismic custom types, routing, slices, and header/fo
 
 ## Commands
 
-```bash
+```bash 
 npm run dev          # Start Next.js + Slice Machine UI concurrently
 npm run build        # Production build
 npm run lint         # ESLint
